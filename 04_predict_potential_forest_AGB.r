@@ -4,8 +4,8 @@ library(gtools)
 library(gmodels)
 
 # Read fixed coordinates
-ptrain <- shapefile("/data1/mounts/s01238ss-wsu-u0217-hie/Khanal_S/Chap4/data/ptrain.shp")
-ptest <- shapefile("/data1/mounts/s01238ss-wsu-u0217-hie/Khanal_S/Chap4/data/ptest.shp")
+ptrain <- shapefile("/data/ptrain.shp")
+ptest <- shapefile("/data/ptest.shp")
 
 # Set paths and variables
 path <- "/outputs/optimumRCP/5/"
@@ -51,8 +51,7 @@ dat <- lapply(unique(traindata$rcp), function(i) {
 })
 dat <- do.call("rbind", dat)
 
-source("data/Chap4/functions/stratified.R")
-source("/code/stratified.R")
+source("functions/stratified.R")
 
 # Bootstrap sampling and weighted AGB calculation
 set.seed(123)

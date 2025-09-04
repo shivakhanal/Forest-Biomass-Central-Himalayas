@@ -82,8 +82,8 @@ for (i in 1:length(maxname)) { # In case there are more than one realization of 
   training$diff <- (training$pred - training$agb)
   
   # Model fitting and prediction
-  test[c("fragIndex", "ElevZone", "rcp")] <- lapply(test[c("fragIndex", "ElevZone", "rcp")], factor)
-  training[c("fragIndex", "ElevZone", "rcp")] <- lapply(training[c("fragIndex", "ElevZone", "rcp")], factor)
+  test[c("fragIndex", "ElevZone")] <- lapply(test[c("fragIndex", "ElevZone")], factor)
+  training[c("fragIndex", "ElevZone")] <- lapply(training[c("fragIndex", "ElevZone")], factor)
   
   train_control <- trainControl(method = "cv", number = 10)
   vars <- c("percentTreeCover", "height", "fragIndex", "ElevZone", "costSurf", "diff")
